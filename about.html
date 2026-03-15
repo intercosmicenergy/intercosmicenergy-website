@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Intercosmic Energy</title>
+  <style>*,::before,::after{box-sizing:border-box;margin:0;padding:0}html{line-height:1.5;-webkit-text-size-adjust:100%}body{line-height:inherit}img,svg{display:block;max-width:100%}button,input{font-family:inherit;font-size:100%}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #2dd4c8;
+      --teal-dim: #1a9e95;
+      --teal-glow: rgba(45, 212, 200, 0.15);
+      --bg: #02080f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: #e2eaf2;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; }
+
+    /* NAV — identical to index */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      border-bottom: 1px solid rgba(45,212,200,0.12);
+      background: rgba(2, 8, 15, 0.82);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; }
+    .nav-brand { line-height: 1.2; }
+    .nav-brand-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.18em; color: #fff; }
+    .nav-brand-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--teal); text-transform: uppercase; opacity: 0.8; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: rgba(226,234,242,0.65); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--teal); color: var(--teal); padding: 0.45rem 1.2rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--teal); color: #02080f; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--teal); }
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: rgba(2,8,15,0.97); border-top: 1px solid rgba(45,212,200,0.12); padding: 1rem 2rem 1.5rem; }
+    .mobile-menu a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.7); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--teal); }
+    @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu.open { display: flex; } }
+
+    /* PAGE HERO */
+    .page-hero {
+      min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 20%, rgba(45,212,200,0.06) 0%, transparent 60%),
+        linear-gradient(to bottom, transparent 30%, rgba(2,8,15,0.98) 100%);
+    }
+    .page-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 3.5rem;
+    }
+    .page-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--teal); }
+    .page-hero h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.05; max-width: 640px; }
+    .page-hero-sub { margin-top: 1.25rem; font-size: 1rem; line-height: 1.8; color: rgba(226,234,242,0.55); max-width: 520px; }
+
+    /* STAR GRID BG */
+    .star-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      opacity: 0.3;
+    }
+
+    /* CONTENT */
+    .section-wrap { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-divider { border-top: 1px solid rgba(45,212,200,0.1); }
+    .section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1.5rem; }
+    .section-body { font-size: 0.98rem; line-height: 1.85; color: rgba(226,234,242,0.62); max-width: 680px; }
+    .section-body p + p { margin-top: 1.25rem; }
+    .section-body strong { color: rgba(226,234,242,0.9); font-weight: 500; }
+
+    /* MISSION PILLARS */
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5px; margin-top: 3rem; background: rgba(45,212,200,0.08); border: 1px solid rgba(45,212,200,0.08); }
+    .pillar { background: var(--bg); padding: 2.25rem 1.75rem; }
+    .pillar-icon { font-size: 1.4rem; margin-bottom: 1rem; opacity: 0.8; }
+    .pillar-title { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--teal); letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+    .pillar-body { font-size: 0.9rem; line-height: 1.75; color: rgba(226,234,242,0.55); }
+
+    /* TEAM */
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .team-card {
+      border: 1px solid rgba(45,212,200,0.1);
+      background: rgba(45,212,200,0.02);
+      border-radius: 4px; overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .team-card:hover { border-color: rgba(45,212,200,0.3); transform: translateY(-4px); }
+    .team-avatar {
+      width: 100%; aspect-ratio: 1/1; max-height: 240px;
+      background: linear-gradient(135deg, rgba(45,212,200,0.08), rgba(2,8,15,0.9));
+      display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(45,212,200,0.08);
+      overflow: hidden;
+    }
+    .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .team-avatar-placeholder {
+      width: 72px; height: 72px; border-radius: 50%;
+      border: 1px solid rgba(45,212,200,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Rajdhani', sans-serif; font-size: 1.4rem; font-weight: 600;
+      color: var(--teal); background: rgba(45,212,200,0.06);
+    }
+    .team-info { padding: 1.5rem; }
+    .team-name { font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; margin-bottom: 0.2rem; }
+    .team-role { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
+    .team-bio { font-size: 0.88rem; line-height: 1.75; color: rgba(226,234,242,0.5); }
+    .team-links { margin-top: 1rem; display: flex; gap: 0.75rem; }
+    .team-link { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.35); text-decoration: none; border: 1px solid rgba(226,234,242,0.1); padding: 0.3rem 0.7rem; border-radius: 2px; transition: all 0.2s; }
+    .team-link:hover { color: var(--teal); border-color: var(--teal); }
+
+    /* PLACEHOLDER NOTE */
+    .placeholder-note {
+      background: rgba(45,212,200,0.04); border: 1px dashed rgba(45,212,200,0.2);
+      border-radius: 4px; padding: 1rem 1.5rem; margin-top: 2rem;
+      font-size: 0.82rem; color: rgba(226,234,242,0.4); font-style: italic;
+    }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,0.06); background: #010509; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; color: rgba(226,234,242,0.3); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.35); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpg" alt="Intercosmic Energy" />
+      <div class="nav-brand">
+        <div class="nav-brand-name">INTERCOSMIC ENERGY</div>
+        <div class="nav-brand-sub">Space-Based Value</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="news.html">News</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="news.html">News</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="star-grid"></div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow">Who We Are</div>
+    <h1>Pioneering the Economics of Space</h1>
+    <p class="page-hero-sub">Intercosmic Energy is developing the foundational infrastructure to convert orbital solar energy into digital value — unlocking a new economic layer for space that has never existed before.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<div class="section-divider">
+  <div class="section-wrap reveal">
+    <div class="section-eyebrow">Our Mission</div>
+    <h2 class="section-title">Making Space Economically Self-Sustaining</h2>
+    <div class="section-body">
+      <p>For over fifty years, space-based solar power has promised clean, unlimited energy — but the economics never closed. Intercosmic Energy was founded on a single insight: <strong>you don't need to transmit energy if you can create value where the energy exists.</strong></p>
+      <p>By converting sunlight in orbit directly into Bitcoin — the world's first energy-native digital currency — we establish a lossless, borderless value pipeline from space to Earth. No power beaming. No receiving arrays. No regulatory overhead.</p>
+      <p>Our mission is to build, patent, and deploy this infrastructure — and to make it available to the satellite operators who are already launching the megaconstellations that will define the next era of space.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">☀️</div>
+        <div class="pillar-title">Sustainability</div>
+        <div class="pillar-body">100% solar powered. We remove reliance on Earth's energy grid by tapping into unlimited orbital sunlight.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🛰️</div>
+        <div class="pillar-title">Resilience</div>
+        <div class="pillar-body">Mining in space eliminates risk from national bans, political instability, or terrestrial grid failures.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔗</div>
+        <div class="pillar-title">Scalability</div>
+        <div class="pillar-body">Satellite constellations can grow far beyond what any traditional mining farm could support on Earth.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚡</div>
+        <div class="pillar-title">Efficiency</div>
+        <div class="pillar-body">Digital value does not degrade over distance. One bitcoin mined in orbit arrives on Earth intact.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="section-divider">
+  <div class="section-wrap reveal">
+    <div class="section-eyebrow">The Team</div>
+    <h2 class="section-title">Built by Experts Across Disciplines</h2>
+    <div class="section-body">
+      <p>Intercosmic Energy brings together expertise in aerospace engineering, cryptographic systems, satellite communications, and business development — united by a shared conviction that space is the next economic frontier.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Team Member 1 - Placeholder -->
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="team-avatar-placeholder">CE</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Your Name Here</div>
+          <div class="team-role">Chief Executive Officer</div>
+          <div class="team-bio">Brief biography highlighting background, expertise, and relevant experience in aerospace, energy, or technology sectors.</div>
+          <div class="team-links">
+            <a href="#" class="team-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 - Placeholder -->
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="team-avatar-placeholder">CT</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Your Name Here</div>
+          <div class="team-role">Chief Technology Officer</div>
+          <div class="team-bio">Brief biography highlighting background, expertise, and relevant experience in satellite engineering, systems architecture, or related fields.</div>
+          <div class="team-links">
+            <a href="#" class="team-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 - Placeholder -->
+      <div class="team-card">
+        <div class="team-avatar">
+          <div class="team-avatar-placeholder">CO</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Your Name Here</div>
+          <div class="team-role">Chief Operations Officer</div>
+          <div class="team-bio">Brief biography highlighting background, expertise, and relevant experience in operations, finance, or business development.</div>
+          <div class="team-links">
+            <a href="#" class="team-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="placeholder-note">
+      ℹ️ Team member names, photos, and bios are placeholder content. Replace with actual team information before publishing.
+    </div>
+  </div>
+</div>
+
+<!-- TECHNOLOGY SNAPSHOT -->
+<div class="section-divider">
+  <div class="section-wrap reveal">
+    <div class="section-eyebrow">Technology</div>
+    <h2 class="section-title">Our Technical Approach</h2>
+    <div class="section-body">
+      <p><strong>Orbital Platform:</strong> CubeSat-class spacecraft operating in Highly Elliptical Orbit (HEO), providing 20–22 hours of sunlight per 24-hour period, deep-space passive cooling, and reduced launch costs versus traditional GEO satellites.</p>
+      <p><strong>Mining Hardware:</strong> Bitmain Antminer S21 XP-class ASIC miners operating at ~270 TH/s with a ~3.7kW power draw — fully supported by deployable solar arrays. Each satellite is a self-contained economic unit.</p>
+      <p><strong>Communications:</strong> Ka-band with VSAT ground infrastructure, optimized for global coverage from minimal ground station locations: Las Vegas, Atacama Desert, Dubai, and Alice Springs.</p>
+      <p><strong>Additional Revenue:</strong> Unused transponder bandwidth (~36–38 MHz) is available for lease through established contractors such as Intelsat and Apstar, providing a stable revenue stream independent of Bitcoin price.</p>
+    </div>
+    <div style="margin-top:2rem;">
+      <a href="index.html" class="btn-outline" style="font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;border:1px solid rgba(226,234,242,0.25);color:rgba(226,234,242,0.75);padding:0.85rem 2rem;border-radius:2px;text-decoration:none;display:inline-block;transition:all 0.2s;">
+        Read the Full Overview →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© <span id="year"></span> Intercosmic Energy. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">X / Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
