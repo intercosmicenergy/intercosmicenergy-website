@@ -74,14 +74,6 @@
 
     /* NOTIFY */
     .notify-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .notify-input {
-      font-family: 'Barlow', sans-serif; font-size: 0.9rem;
-      background: rgba(45,212,200,0.04); border: 1px solid rgba(45,212,200,0.2);
-      color: #e2eaf2; padding: 0.75rem 1.25rem; border-radius: 2px;
-      outline: none; transition: border-color 0.2s; min-width: 240px;
-    }
-    .notify-input::placeholder { color: rgba(226,234,242,0.3); }
-    .notify-input:focus { border-color: var(--teal); }
     .notify-btn {
       font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
       background: var(--teal); color: #02080f; font-weight: 600;
@@ -166,8 +158,7 @@
     <p class="coming-soon-body">Our news section is launching soon. Sign up below to be the first to receive updates on milestones, partnerships, and announcements from Intercosmic Energy.</p>
 
     <div class="notify-form" id="notifyForm">
-      <input type="email" class="notify-input" id="emailInput" placeholder="Enter your email address" />
-      <button class="notify-btn" onclick="handleNotify()">Notify Me</button>
+      <a class="notify-btn" id="notify-mailto">Notify Me</a>
     </div>
     <div class="notify-success" id="notifySuccess">✓ &nbsp;You're on the list. We'll be in touch.</div>
   </div>
@@ -192,15 +183,13 @@
     document.getElementById('mobileMenu').classList.toggle('open');
   });
 
-  function handleNotify() {
-    const email = document.getElementById('emailInput').value;
-    if (!email || !email.includes('@')) {
-      document.getElementById('emailInput').style.borderColor = 'rgba(255,80,80,0.5)';
-      return;
-    }
-    document.getElementById('notifyForm').style.display = 'none';
-    document.getElementById('notifySuccess').style.display = 'block';
-  }
+  (function() {
+  const d = 'intercosmicenergy' + '.' + 'com';
+  const addr = 'info' + '\u0040' + d;
+  const subject = encodeURIComponent('Mailing List Request');
+  const body = encodeURIComponent('Please add me to your mailing list.');
+  document.getElementById('notify-mailto').href = 'mailto:' + addr + '?subject=' + subject + '&body=' + body;
+})();
 </script>
 </body>
 </html>
