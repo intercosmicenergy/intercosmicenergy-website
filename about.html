@@ -116,7 +116,7 @@
       border-bottom: 1px solid rgba(45,212,200,0.08);
       overflow: hidden;
     }
-    .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .team-avatar img { width: 100%; height: 100%; object-fit: contain; }
     .team-info { padding: 1.5rem; }
     .team-name { font-family: 'Rajdhani', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; margin-bottom: 0.2rem; }
     .team-role { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.85rem; }
@@ -124,6 +124,7 @@
     .team-links { margin-top: 1rem; display: flex; gap: 0.75rem; }
     .team-link { font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.35); text-decoration: none; border: 1px solid rgba(226,234,242,0.1); padding: 0.3rem 0.7rem; border-radius: 2px; transition: all 0.2s; }
     .team-link:hover { color: var(--teal); border-color: var(--teal); }
+
 
     /* FOOTER */
     footer { border-top: 1px solid rgba(255,255,255,0.06); background: #010509; }
@@ -226,10 +227,10 @@
 
     <div class="team-grid">
 
-      <!-- Team Member 1 - Placeholder -->
+      <!-- Team Member 1 - CEO -->
       <div class="team-card">
         <div class="team-avatar">
-          <img src="images/Nick.png" alt="Nickolas Moran" />
+          <img src="images/Nick.png" alt="Nickolas Moran" style="transform: scale(1.04);"/>
         </div>
         <div class="team-info">
           <div class="team-name">Nickolas Moran</div>
@@ -241,7 +242,7 @@
         </div>
       </div>
 
-      <!-- Team Member 2 - Placeholder -->
+      <!-- Team Member 2 - CTO -->
       <div class="team-card">
         <div class="team-avatar">
           <img src="images/Mike.png" alt="Michael Myers, Ph.D." />
@@ -256,10 +257,10 @@
         </div>
       </div>
 
-      <!-- Team Member 3 - Placeholder -->
+      <!-- Team Member 3 - COO -->
       <div class="team-card">
         <div class="team-avatar">
-          <img src="images/Brad.png" alt="Bradley Holley" />
+          <img src="images/Brad.png" alt="Bradley Holley" style="transform: scale(1.29);" />
         </div>
         <div class="team-info">
           <div class="team-name">Bradley Holley</div>
