@@ -72,18 +72,8 @@
     .coming-soon-title { font-family: 'Rajdhani', sans-serif; font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: #fff; margin-bottom: 1rem; }
     .coming-soon-body { font-size: 1rem; line-height: 1.8; color: rgba(226,234,242,0.5); max-width: 460px; margin: 0 auto 2.5rem; }
 
-    /* NOTIFY */
-    .notify-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .notify-btn {
-      font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-      background: var(--teal); color: #02080f; font-weight: 600;
-      padding: 0.75rem 1.75rem; border-radius: 2px; border: none; cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .notify-btn:hover { opacity: 0.85; }
-    .notify-success { display: none; font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-top: 0.5rem; }
 
-    /* PREVIEW CARDS */
+/* PREVIEW CARDS */
     .preview-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 2rem; }
     .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: left; }
     .preview-card { border: 1px solid rgba(45,212,200,0.08); background: rgba(45,212,200,0.02); border-radius: 4px; padding: 1.75rem; opacity: 0.5; position: relative; overflow: hidden; }
@@ -100,6 +90,115 @@
     .footer-links { display: flex; gap: 1.5rem; }
     .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.35); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--teal); }
+
+
+    /* THUMBNAILS */
+    .featured-thumb {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 3px;
+      display: block;
+    }
+    .news-card-thumb {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover;
+      border-radius: 3px; margin-bottom: 1.25rem;
+      background: rgba(45,212,200,0.05);
+    }
+    .news-card-logo-thumb {
+      width: 100%; aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45,212,200,0.04); border-radius: 3px;
+      margin-bottom: 1.25rem; border: 1px solid rgba(45,212,200,0.08);
+    }
+    .news-card-logo-thumb img {
+      width: 100%; height: 100%; border-radius: 8px; opacity: 0.85;
+    }
+    /* NEWS GRID */
+    .news-section { border-top: 1px solid rgba(45,212,200,0.1); }
+    .news-inner { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+
+    /* Featured */
+    .featured-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+      border: 1px solid rgba(45,212,200,0.15);
+      background: rgba(45,212,200,0.03);
+      border-radius: 4px; padding: 2.5rem;
+      margin-bottom: 3rem; text-decoration: none;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .featured-card:hover { border-color: rgba(45,212,200,0.4); transform: translateY(-3px); }
+    @media (max-width: 768px) { .featured-card { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .featured-label {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal);
+      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .featured-label::before { content: 'FEATURED'; }
+    .featured-badge {
+      background: rgba(45,212,200,0.12); border: 1px solid rgba(45,212,200,0.25);
+      padding: 0.15rem 0.5rem; border-radius: 2px; font-size: 0.58rem;
+    }
+    .featured-title {
+      font-family: 'Rajdhani', sans-serif; font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .featured-excerpt {
+      font-size: 0.95rem; line-height: 1.8; color: rgba(226,234,242,0.55);
+      margin-bottom: 1.5rem;
+    }
+    .featured-meta {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem;
+      letter-spacing: 0.15em; color: rgba(226,234,242,0.35);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .featured-source { color: var(--teal); }
+    .featured-visual {
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(45,212,200,0.04); border: 1px solid rgba(45,212,200,0.08);
+      border-radius: 3px; min-height: 180px; position: relative; overflow: hidden;
+    }
+    .featured-visual svg { opacity: 0.4; }
+    .featured-cta {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal);
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .featured-cta::after { content: '→'; }
+
+    /* Small cards grid */
+    .news-grid-label {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem;
+      letter-spacing: 0.35em; text-transform: uppercase; color: rgba(226,234,242,0.3);
+      margin-bottom: 1.5rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(45,212,200,0.08);
+    }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .news-card {
+      border: 1px solid rgba(45,212,200,0.08); background: rgba(45,212,200,0.02);
+      border-radius: 4px; padding: 1.75rem; text-decoration: none;
+      transition: border-color 0.3s, transform 0.3s; display: flex; flex-direction: column;
+    }
+    .news-card:hover { border-color: rgba(45,212,200,0.3); transform: translateY(-3px); }
+    .news-card-tag {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(45,212,200,0.7); border: 1px solid rgba(45,212,200,0.2);
+      padding: 0.18rem 0.55rem; border-radius: 2px;
+      display: inline-block; margin-bottom: 1rem; align-self: flex-start;
+    }
+    .news-card-title {
+      font-family: 'Rajdhani', sans-serif; font-size: 1.05rem; font-weight: 600;
+      color: #fff; line-height: 1.3; margin-bottom: 0.75rem; flex: 1;
+    }
+    .news-card-excerpt {
+      font-size: 0.85rem; line-height: 1.7; color: rgba(226,234,242,0.45);
+      margin-bottom: 1.25rem;
+    }
+    .news-card-meta {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem;
+      letter-spacing: 0.15em; color: rgba(226,234,242,0.3);
+      display: flex; justify-content: space-between; align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; margin-top: auto;
+    }
+    .news-card-source { color: var(--teal); }
   </style>
 </head>
 <body>
@@ -143,24 +242,97 @@
   </div>
 </section>
 
-<!-- COMING SOON -->
-<section class="coming-soon-section">
-  <div class="coming-soon-inner">
 
-    <div class="orbit-anim">
-      <div class="orbit-ring orbit-ring-1"><div class="orbit-dot"></div></div>
-      <div class="orbit-ring orbit-ring-2"><div class="orbit-dot"></div></div>
-      <div class="orbit-ring orbit-ring-3"><div class="orbit-dot"></div></div>
-      <div class="orbit-center"><div class="orbit-center-dot"></div></div>
+<!-- NEWS -->
+<section class="news-section">
+  <div class="news-inner">
+
+    <!-- FEATURED: Yahoo/PCMag — newest -->
+    <a class="featured-card" href="https://tech.yahoo.com/science/articles/startup-working-orbital-data-centers-190656773.html" target="_blank" rel="noopener">
+      <div>
+        <div class="featured-label"><span class="featured-badge">Press</span></div>
+        <div class="featured-title">Startup Working on Orbital Data Centers Teases Bitcoin Mining in Space, Too</div>
+        <div class="featured-excerpt">PCMag covers Intercosmic Energy alongside Nvidia-backed Starcloud as a pioneering company working on Bitcoin mining in space — highlighting the economic potential of harnessing orbital solar energy for cryptocurrency mining.</div>
+        <div class="featured-meta">
+          <span class="featured-source">Yahoo Tech / PCMag</span>
+          <span>March 2026</span>
+        </div>
+        <br/>
+        <span class="featured-cta">Read Article</span>
+      </div>
+      <div class="featured-visual" style="padding:0;overflow:hidden;">
+        <img class="featured-thumb" src="images/techyahoo_starcloud.jpg" alt="Intercosmic Energy orbital satellite" />
+      </div>
+    </a>
+
+    <div class="news-grid-label">More Coverage</div>
+    <div class="news-grid">
+
+      <!-- Blockware Podcast — Dec 15, 2025 -->
+      <a class="news-card" href="https://www.youtube.com/watch?v=IY3vwr-fKuI" target="_blank" rel="noopener">
+        <img class="news-card-thumb" src="https://img.youtube.com/vi/IY3vwr-fKuI/maxresdefault.jpg" alt="Blockware Podcast thumbnail" />
+        <span class="news-card-tag">Video / Podcast</span>
+        <div class="news-card-title">Bitcoin Mining in Outer Space — Blockware Podcast</div>
+        <div class="news-card-excerpt">Blockware Intelligence's Mitchell Askew interviews Nick Moran on whether Bitcoin can be mined in orbit, as Elon Musk and Jeff Bezos race to put data centers into space.</div>
+        <div class="news-card-meta">
+          <span class="news-card-source">Blockware Podcast</span>
+          <span>Dec 2025</span>
+        </div>
+      </a>
+
+      <!-- Bitcoin Archive — Aug 29, 2025 -->
+      <a class="news-card" href="https://www.youtube.com/watch?v=OHcTexAYA5o" target="_blank" rel="noopener">
+        <img class="news-card-thumb" src="https://img.youtube.com/vi/OHcTexAYA5o/maxresdefault.jpg" alt="Bitcoin Archive thumbnail" />
+        <span class="news-card-tag">Video</span>
+        <div class="news-card-title">Elon Musk About to Use SpaceX to Mine Bitcoin? Founder Just Dropped Plan</div>
+        <div class="news-card-excerpt">Bitcoin Archive covers Intercosmic Energy's orbital mining blueprint, exploring whether SpaceX infrastructure could accelerate the path to space-based Bitcoin mining.</div>
+        <div class="news-card-meta">
+          <span class="news-card-source">Bitcoin Archive</span>
+          <span>Aug 2025</span>
+        </div>
+      </a>
+
+      <!-- Bitcoin Magazine — Jul 17, 2025 -->
+      <a class="news-card" href="https://bitcoinmagazine.com/bitcoin-mining/bitcoin-mining-in-space" target="_blank" rel="noopener">
+        <div class="news-card-logo-thumb">
+          <img src="images/bitcoinmagazine_mininginspace.webp" alt="Bitcoin Magazine" />
+        </div>
+        <span class="news-card-tag">Article</span>
+        <div class="news-card-title">Bitcoin Mining In Space</div>
+        <div class="news-card-excerpt">Bitcoin Magazine spotlights Nick Moran and Intercosmic Energy's case for orbital Bitcoin mining — arguing that low Earth orbit's sunlight, cooling, and zero weather makes it an ideal environment for ASICs.</div>
+        <div class="news-card-meta">
+          <span class="news-card-source">Bitcoin Magazine</span>
+          <span>Jul 2025</span>
+        </div>
+      </a>
+
+      <!-- Bitcoin Bram YouTube — Jun 9, 2025 -->
+      <a class="news-card" href="https://www.youtube.com/watch?v=HkxI-eFylF4" target="_blank" rel="noopener">
+        <img class="news-card-thumb" src="https://img.youtube.com/vi/HkxI-eFylF4/maxresdefault.jpg" alt="Bitcoin Bram thumbnail" />
+        <span class="news-card-tag">Video / Podcast</span>
+        <div class="news-card-title">Bitcoin Mining in Space: The Craziest or Smartest Idea Ever?</div>
+        <div class="news-card-excerpt">Bram Kanstein sits down with Nick Moran to unpack the full thesis behind Intercosmic Energy — from cryogenic refinery roots to orbital Bitcoin mining as a solution to a 50-year NASA challenge.</div>
+        <div class="news-card-meta">
+          <span class="news-card-source">Bitcoin Bram (BFM160)</span>
+          <span>Jun 2025</span>
+        </div>
+      </a>
+
+      <!-- Pomp Substack — Dec 23, 2024 -->
+      <a class="news-card" href="https://pomp.substack.com/p/can-we-mine-bitcoin-in-space-with" target="_blank" rel="noopener">
+        <div class="news-card-logo-thumb">
+          <img src="images/pompsubstack_canweminebitcoin.jpg" alt="The Pomp Letter" />
+        </div>
+        <span class="news-card-tag">Newsletter</span>
+        <div class="news-card-title">Can We Mine Bitcoin In Space With Solar Panels?</div>
+        <div class="news-card-excerpt">Anthony Pompliano explores the idea of mining Bitcoin in orbit using solar-powered satellites — calling it one of the rare ideas that genuinely caught his attention after receiving it from Intercosmic Energy's founder.</div>
+        <div class="news-card-meta">
+          <span class="news-card-source">The Pomp Letter</span>
+          <span>Dec 2024</span>
+        </div>
+      </a>
+
     </div>
-
-    <h2 class="coming-soon-title">Transmission Incoming</h2>
-    <p class="coming-soon-body">Our news section is launching soon. Sign up below to be the first to receive updates on milestones, partnerships, and announcements from Intercosmic Energy.</p>
-
-    <div class="notify-form" id="notifyForm">
-      <a class="notify-btn" id="notify-mailto">Notify Me</a>
-    </div>
-    <div class="notify-success" id="notifySuccess">✓ &nbsp;You're on the list. We'll be in touch.</div>
   </div>
 </section>
 
@@ -182,14 +354,6 @@
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('open');
   });
-
-  (function() {
-  const d = 'intercosmicenergy' + '.' + 'com';
-  const addr = 'info' + '\u0040' + d;
-  const subject = encodeURIComponent('Mailing List Request');
-  const body = encodeURIComponent('Please add me to your mailing list.');
-  document.getElementById('notify-mailto').href = 'mailto:' + addr + '?subject=' + subject + '&body=' + body;
-})();
 </script>
 </body>
 </html>
