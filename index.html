@@ -329,6 +329,41 @@
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.visible { opacity: 1; transform: none; }
+
+    /* PITCH SUMMARY */
+    .pitch-summary {
+      background: rgba(45,212,200,0.03);
+      border-top: 1px solid rgba(45,212,200,0.1);
+      border-bottom: 1px solid rgba(45,212,200,0.1);
+    }
+    .pitch-inner {
+      max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
+    }
+    .pitch-statement {
+      font-size: 1.1rem; line-height: 1.85; color: rgba(226,234,242,0.75);
+      max-width: 780px; margin-top: 1rem; margin-bottom: 3.5rem;
+    }
+    .pitch-pillars {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .pitch-pillar {
+      border-top: 1px solid rgba(45,212,200,0.2); padding-top: 1.25rem;
+    }
+    .pitch-pillar-num {
+      font-family: 'Rajdhani', sans-serif; font-size: 0.75rem; font-weight: 700;
+      color: var(--teal); letter-spacing: 0.2em; margin-bottom: 0.5rem;
+    }
+    .pitch-pillar-title {
+      font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700;
+      color: #fff; margin-bottom: 0.6rem;
+    }
+    .pitch-pillar-body {
+      font-size: 0.9rem; line-height: 1.75; color: rgba(226,234,242,0.55);
+    }
+    .pitch-intro .section-eyebrow {
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 <body>
@@ -383,6 +418,38 @@
     <div class="scroll-line"></div>
   </div>
 </section>
+
+<!-- PITCH SUMMARY -->
+<div class="pitch-summary">
+  <div class="pitch-inner">
+    <div class="pitch-intro">
+      <div class="section-eyebrow">The Opportunity</div>
+      <p class="pitch-statement">Intercosmic Energy has developed the missing economic layer that has kept space-based solar power out of reach for 50 years — a patent-pending platform that converts orbital sunlight directly into Bitcoin, establishing a lossless digital value pipeline from space to Earth.</p>
+    </div>
+    <div class="pitch-pillars">
+      <div class="pitch-pillar">
+        <div class="pitch-pillar-num">01</div>
+        <div class="pitch-pillar-title">The Problem</div>
+        <div class="pitch-pillar-body">Space-based solar power has been economically unviable for decades. Transmitting energy back to Earth introduces loss, cost, and regulatory friction that has prevented deployment at scale.</div>
+      </div>
+      <div class="pitch-pillar">
+        <div class="pitch-pillar-num">02</div>
+        <div class="pitch-pillar-title">The Solution</div>
+        <div class="pitch-pillar-body">Rather than transmitting energy, we convert it into digital value in orbit. Bitcoin mining in space eliminates the transmission problem entirely — the only thing that crosses the Earth-space boundary is data.</div>
+      </div>
+      <div class="pitch-pillar">
+        <div class="pitch-pillar-num">03</div>
+        <div class="pitch-pillar-title">The Opportunity</div>
+        <div class="pitch-pillar-body">A single satellite is projected to generate $17k–$104k per year in mining revenue, with transponder bandwidth leasing adding up to $3.6M per year per satellite — <strong style="color: rgba(226,234,242,0.8); font-weight: 600;">before Bitcoin's price trajectory is factored in.</strong></div>
+      </div>
+      <div class="pitch-pillar">
+        <div class="pitch-pillar-num">04</div>
+        <div class="pitch-pillar-title">Patent Pending</div>
+        <div class="pitch-pillar-body">Our Space-Based Blockchain Mining Platform is patent pending. Licensing to megaconstellation operators — Starlink, Kuiper, OneWeb, and Guowang — represents a multi-billion dollar addressable market.</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- SECTION: The Original Promise -->
 <div class="section-divider">
