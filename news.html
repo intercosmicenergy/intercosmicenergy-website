@@ -20,10 +20,53 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
+    /* ── LIGHT MODE ── */
     :root {
       --teal: #2dd4c8;
+      --teal-dim: #1a9e95;
+      --teal-glow: rgba(45, 212, 200, 0.15);
       --bg: #02080f;
+      --bg2: #060e18;
+      --text: #e2eaf2;
+      --text-muted: rgba(226,234,242,0.62);
+      --text-dim: rgba(226,234,242,0.55);
+      --border: rgba(45,212,200,0.1);
+      --nav-bg: rgba(2, 8, 15, 0.82);
+      --mobile-menu-bg: rgba(2, 8, 15, 0.97);
+      --footer-bg: #010509;
+      --card-bg: rgba(45,212,200,0.02);
+      --card-border: rgba(45,212,200,0.08);
+      --highlight-bg: rgba(45,212,200,0.04);
+      --section-alt-bg: rgba(45,212,200,0.03);
     }
+    html.light {
+      --bg: #f0f4f8;
+      --bg2: #e2eaf2;
+      --text: #0a1628;
+      --text-muted: rgba(10,22,40,0.7);
+      --text-dim: rgba(10,22,40,0.6);
+      --border: rgba(45,212,200,0.25);
+      --nav-bg: rgba(240,244,248,0.92);
+      --mobile-menu-bg: rgba(240,244,248,0.98);
+      --footer-bg: #dde4ed;
+      --card-bg: rgba(45,212,200,0.05);
+      --card-border: rgba(45,212,200,0.2);
+      --highlight-bg: rgba(45,212,200,0.08);
+      --section-alt-bg: rgba(45,212,200,0.06);
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      background: none; border: 1px solid rgba(45,212,200,0.3);
+      border-radius: 2px; cursor: pointer;
+      padding: 0.3rem 0.55rem; display: flex; align-items: center;
+      color: var(--teal); transition: all 0.2s; flex-shrink: 0;
+    }
+    .theme-toggle:hover { background: rgba(45,212,200,0.1); }
+    .theme-toggle svg { width: 14px; height: 14px; display: block; }
+    .icon-sun { display: none; }
+    .icon-moon { display: block; }
+    html.light .icon-sun { display: block; }
+    html.light .icon-moon { display: none; }
     * { box-sizing: border-box; }
     body { background-color: var(--bg); color: #e2eaf2; font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden; }
     h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; }
@@ -210,6 +253,52 @@
       border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem; margin-top: auto;
     }
     .news-card-source { color: var(--teal); }
+
+    /* ── Light mode overrides (shared) ── */
+    body { background-color: var(--bg); color: var(--text); }
+    nav { background: var(--nav-bg); border-bottom-color: var(--border); }
+    .nav-brand-name { color: var(--text); }
+    .nav-links a { color: var(--text-muted); }
+    .mobile-menu { background: var(--mobile-menu-bg); }
+    .mobile-menu a { color: var(--text-muted); }
+    footer { background: var(--footer-bg); }
+    .footer-copy { color: var(--text-muted); }
+    .footer-links a { color: var(--text-muted); }
+    .section-divider { border-top-color: var(--border); }
+    .section-title { color: var(--text); }
+    .section-body { color: var(--text-muted); }
+    .section-body b, .section-body strong { color: var(--text); }
+    .section-body i { color: var(--text-muted); }
+    .ic-list li { color: var(--text-muted); }
+    .ic-list li strong { color: var(--text); }
+    html.light .section-eyebrow { color: var(--teal-dim); }
+    html.light .section-title { color: var(--text); }
+    html.light .section-body { color: var(--text-muted); }
+    html.light .page-hero h1 { color: var(--text); }
+    html.light .page-hero-sub { color: var(--text-muted); }
+
+    /* ── Light mode: news specific ── */
+    html.light .page-hero { background: var(--bg); }
+    html.light .page-hero-bg { display: none; }
+    html.light .star-grid { display: none; }
+    html.light .featured-card { border-color: var(--card-border); background: var(--card-bg); }
+    html.light .featured-title { color: var(--text); }
+    html.light .featured-excerpt { color: var(--text-muted); }
+    html.light .featured-meta { color: var(--text-muted); font-weight: 700;}
+    html.light .featured-label { font-weight: 700; }
+    html.light .featured-cta { font-weight: 700; }
+    html.light .page-eyebrow { font-weight: 700; }
+    html.light .section-eyebrow { font-weight: 700; }
+    html.light .news-card { border-color: var(--card-border); background: var(--card-bg); }
+    html.light .news-card-title { color: var(--text); }
+    html.light .news-card-excerpt { color: var(--text-muted); }
+    html.light .news-card-meta { color: var(--text-muted); border-top-color: var(--border); font-weight: 700;}
+    html.light .news-card-tag { font-weight: 700; }
+    html.light .news-grid-label { color: var(--text-muted); border-bottom-color: var(--border); font-weight: 700;}
+    html.light .coming-soon-title { color: var(--text); }
+    html.light .coming-soon-body { color: var(--text-muted); }
+    html.light .news-section { border-top-color: var(--border); }
+    html.light .notify-btn { color: #02080f; }
   </style>
 </head>
 <body>
@@ -218,7 +307,7 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.jpg" alt="Intercosmic Energy" />
+      <img src="images/logo.jpg" alt="Intercosmic Energy" class="nav-logo-img" />
       <div class="nav-brand">
         <div class="nav-brand-name">INTERCOSMIC ENERGY</div>
         <div class="nav-brand-sub">Bitcoin Mining in Space</div>
@@ -230,6 +319,10 @@
       <a href="news.html" class="active">News</a>
       <a href="index.html#contact" class="nav-cta">Contact</a>
     </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -369,6 +462,42 @@
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('open');
   });
+
+  // ── Theme toggle ──
+  (function() {
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        document.querySelectorAll('.nav-logo-img').forEach(img => {
+          if (!img.src.includes('logolm')) img.src = img.src.replace('logo.jpg', 'logolm.jpg');
+        });
+      } else {
+        html.classList.remove('light');
+        document.querySelectorAll('.nav-logo-img').forEach(img => {
+          img.src = img.src.replace('logolm.jpg', 'logo.jpg');
+        });
+      }
+    }
+
+    const saved = localStorage.getItem('ie-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const next = html.classList.contains('light') ? 'dark' : 'light';
+        localStorage.setItem('ie-theme', next);
+        applyTheme(next);
+      });
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('ie-theme')) applyTheme(e.matches ? 'dark' : 'light');
+    });
+  })();
 </script>
 </body>
 </html>
