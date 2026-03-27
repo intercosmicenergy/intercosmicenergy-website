@@ -268,6 +268,9 @@
       background: rgba(45,212,200,0.03);
       border-top: 1px solid rgba(45,212,200,0.1);
     }
+    .contact-ctas {
+      display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;
+    }
     .contact-inner {
       max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
@@ -676,8 +679,10 @@
         <div class="contact-item-label">General Inquiries</div>
         <div class="contact-item-val"><a id="email-info" href="#" class="email-link">Loading...</a></div>
       </div>
-      <div style="margin-top:0.5rem;">
-        <a id="email-cta" href="#" class="btn-primary" style="display:inline-block;">Send Us a Message</a>
+      <div class="contact-ctas">
+        <a id="cta-investor" href="#" class="btn-primary">I'm an Investor</a>
+        <a id="cta-partner" href="#" class="btn-primary">I'm a Licensing Partner</a>
+        <a id="cta-defense" href="#" class="btn-primary">I'm a Defense Stakeholder</a>
       </div>
     </div>
   </div>
@@ -726,17 +731,26 @@
   (function() {
     const d = 'intercosmicenergy' + '.' + 'com';
     const addrs = {
-      'email-info':     ['info', d],
-      'email-partners': ['partnerships', d],
-      'email-investors':['investors', d],
-      'email-cta':      ['info', d],
+      'email-info': ['info', d],
     };
     Object.entries(addrs).forEach(([id, [user, domain]]) => {
       const el = document.getElementById(id);
       if (!el) return;
       const addr = user + '\u0040' + domain;
       el.href = 'mailto:' + addr;
-      if (id !== 'email-cta') el.textContent = addr;
+      el.textContent = addr;
+    });
+
+    const ctas = [
+      { id: 'cta-investor', user: 'investors', subject: "Investor Inquiry — Intercosmic Energy", body: "Hello,\n\nI'm interested in learning more about investment opportunities with Intercosmic Energy." },
+      { id: 'cta-partner',  user: 'partners',  subject: "Licensing Partnership Inquiry — Intercosmic Energy", body: "Hello,\n\nI'm interested in exploring a licensing partnership with Intercosmic Energy." },
+      { id: 'cta-defense',  user: 'defense',   subject: "Defense Inquiry — Intercosmic Energy", body: "Hello,\n\nI'm interested in discussing defense applications of Intercosmic Energy's technology." },
+    ];
+    ctas.forEach(({ id, user, subject, body }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const addr = user + '\u0040' + d;
+      el.href = 'mailto:' + addr + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
   })();
 </script>
