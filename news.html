@@ -209,6 +209,42 @@
     }
     .news-card-source { color: var(--teal); }
 
+
+    /* ── Press Bar ── */
+    .press-bar {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 1.25rem 2rem;
+    }
+    .press-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem 2.5rem;
+    }
+    .press-bar-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--teal); white-space: nowrap;
+    }
+    .press-bar-divider {
+      width: 1px; height: 14px;
+      background: rgba(226,234,242,0.1);
+    }
+    .press-bar-items {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 2rem;
+    }
+    .press-bar-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; text-decoration: none;
+      color: rgba(226,234,242,0.28); transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .press-bar-item:hover { color: var(--teal); }
+    @media (max-width: 600px) {
+      .press-bar-divider { display: none; }
+      .press-bar-inner { justify-content: center; }
+      .press-bar-label { width: 100%; text-align: center; }
+      .press-bar-items { justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -348,7 +384,21 @@
 </section>
 
 <!-- FOOTER -->
+<!-- PRESS BAR -->
 <footer>
+  <div class="press-bar">
+    <div class="press-bar-inner">
+      <span class="press-bar-label">As Seen In</span>
+      <div class="press-bar-divider"></div>
+      <div class="press-bar-items">
+        <a class="press-bar-item" href="https://tech.yahoo.com/science/articles/startup-working-orbital-data-centers-190656773.html" target="_blank" rel="noopener">Yahoo Tech / PCMag</a>
+        <a class="press-bar-item" href="https://bitcoinmagazine.com/bitcoin-mining/bitcoin-mining-in-space" target="_blank" rel="noopener">Bitcoin Magazine</a>
+        <a class="press-bar-item" href="https://www.youtube.com/watch?v=IY3vwr-fKuI" target="_blank" rel="noopener">Blockware Intelligence</a>
+        <a class="press-bar-item" href="https://pomp.substack.com/p/can-we-mine-bitcoin-in-space-with" target="_blank" rel="noopener">The Pomp Letter</a>
+        <a class="press-bar-item" href="https://www.youtube.com/watch?v=HkxI-eFylF4" target="_blank" rel="noopener">Bitcoin Bram</a>
+      </div>
+    </div>
+  </div>
   <div class="footer-inner">
     <div class="footer-copy">© <span id="year"></span> Intercosmic Energy. All rights reserved.</div>
     <div class="footer-links">
