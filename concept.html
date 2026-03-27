@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/favicon.ico" />
-  <title>Intercosmic Energy — Bitcoin Mining in Space</title>
-  <meta name="description" content="Intercosmic Energy is developing the world's first space-based Bitcoin mining platform — converting orbital solar energy into digital value via solar-powered satellites in Highly Elliptical Orbit." />
-  <meta property="og:title" content="Intercosmic Energy — Bitcoin Mining in Space" />
-  <meta property="og:description" content="Intercosmic Energy is developing the world's first space-based Bitcoin mining platform — converting orbital solar energy into digital value via solar-powered satellites in Highly Elliptical Orbit." />
+  <title>Core Concept — Intercosmic Energy</title>
+  <meta name="description" content="The full intellectual and economic case for space-based Bitcoin mining — how Intercosmic Energy's patent-pending platform solves the 50-year problem of space-based solar power." />
+  <meta property="og:title" content="Core Concept — Intercosmic Energy" />
+  <meta property="og:description" content="The full intellectual and economic case for space-based Bitcoin mining — how Intercosmic Energy's patent-pending platform solves the 50-year problem of space-based solar power." />
   <meta property="og:image" content="https://www.intercosmicenergy.com/images/hero.png" />
-  <meta property="og:url" content="https://www.intercosmicenergy.com/" />
+  <meta property="og:url" content="https://www.intercosmicenergy.com/concept.html" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Intercosmic Energy — Bitcoin Mining in Space" />
-  <meta name="twitter:description" content="Intercosmic Energy is developing the world's first space-based Bitcoin mining platform — converting orbital solar energy into digital value via solar-powered satellites in Highly Elliptical Orbit." />
+  <meta name="twitter:title" content="Core Concept — Intercosmic Energy" />
+  <meta name="twitter:description" content="The full intellectual and economic case for space-based Bitcoin mining — how Intercosmic Energy's patent-pending platform solves the 50-year problem of space-based solar power." />
   <meta name="twitter:image" content="https://www.intercosmicenergy.com/images/hero.png" />
   <style>*,::before,::after{box-sizing:border-box;margin:0;padding:0}html{line-height:1.5;-webkit-text-size-adjust:100%}body{line-height:inherit}img,svg{display:block;max-width:100%}button,input{font-family:inherit;font-size:100%}</style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -402,6 +402,30 @@
       .press-bar-label { width: 100%; text-align: center; }
       .press-bar-items { justify-content: center; }
     }
+    /* ── Page Hero ── */
+    .page-hero {
+      min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 20%, rgba(45,212,200,0.06) 0%, transparent 60%),
+        linear-gradient(to bottom, transparent 30%, rgba(2,8,15,0.98) 100%);
+    }
+    .star-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      opacity: 0.3;
+    }
+    .page-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 3.5rem; }
+    .page-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--teal); }
+    .page-hero h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.05; max-width: 760px; }
+    .page-hero-sub { margin-top: 1.25rem; font-size: 1rem; line-height: 1.8; color: rgba(226,234,242,0.55); max-width: 580px; }
   </style>
 </head>
 <body>
@@ -417,12 +441,12 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="news.html">News</a>
-      <a href="concept.html">Core Concept</a>
+      <a href="concept.html" class="active">Core Concept</a>
       <a href="faq.html">FAQ</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -434,86 +458,221 @@
     <a href="news.html">News</a>
     <a href="concept.html">Core Concept</a>
     <a href="faq.html">FAQ</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-image"></div>
-  <div class="hero-gradient"></div>
-
-  <div class="hero-content">
-    <div class="hero-eyebrow">Intercosmic Energy</div>
-    <h1>Bitcoin Mining in Space:<br /><span>Making Space Based Solar Power Economically Viable.<br /></span></h1>
-    <p class="hero-sub">For more than half a century, space based solar power (SBSP) has occupied a strange position in human imagination. On paper, it promises virtually unlimited, clean, uninterrupted energy. In practice, it has remained economically impractical, perpetually stuck just beyond reach. The physics work. The engineering is difficult but solvable. The economics, however, have never closed — until now.</p>
-    <p class="hero-sub">Bitcoin mining in space represents a fundamental rethinking of how energy generated beyond Earth can be monetized. By converting sunlight directly into digital value in orbit, it establishes a 100% digital, lossless value pipeline from space to Earth—eliminating the need for costly, inefficient, and risky power transmission. In doing so, it resolves the core economic constraint that has limited SBSP research and deployment for decades.</p>
-    <p class="hero-sub">This is not a marginal improvement. It is a category shift—one that has implications not only for energy and space infrastructure, but for how humanity expands beyond Earth.</p>
-  </div>
-
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="star-grid"></div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow">The Platform</div>
+    <h1>The First Economically Viable Architecture for Space-Based Solar Power</h1>
+    <p class="page-hero-sub">For fifty years, SBSP promised unlimited clean energy from orbit. The physics always worked. The economics never did — until Bitcoin changed the equation entirely.</p>
   </div>
 </section>
 
-<!-- PITCH SUMMARY -->
-<div class="pitch-summary">
-  <div class="pitch-inner">
-    <div class="pitch-intro">
-      <div class="section-eyebrow">The Opportunity</div>
-      <p class="pitch-statement">Intercosmic Energy has developed the missing economic layer that has kept space-based solar power out of reach for 50 years — a patent-pending platform that converts orbital sunlight directly into Bitcoin, establishing a lossless digital value pipeline from space to Earth.</p>
-    </div>
-    <div class="pitch-pillars">
-      <div class="pitch-pillar">
-        <div class="pitch-pillar-num">01</div>
-        <div class="pitch-pillar-title">The Problem</div>
-        <div class="pitch-pillar-body">Space-based solar power has been economically unviable for decades. Transmitting energy back to Earth introduces loss, cost, and regulatory friction that has prevented deployment at scale.</div>
+<!-- SECTION: The Original Promise -->
+<div class="section-divider">
+  <div class="content-section reveal" id="promise">
+    <div class="two-col">
+      <div>
+        <div class="section-eyebrow">Background</div>
+        <h2 class="section-title">The Original Promise of Space-Based Solar Power</h2>
+        <div class="section-body">
+          <p>The appeal of SBSP is straightforward. In orbit, sunlight is constant, unobstructed by weather, seasons, or the day-night cycle. A solar array in geostationary orbit can receive more than eight times the annual energy per square meter than a terrestrial panel in many locations. The energy source is clean, abundant, and effectively infinite on human timescales.</p>
+          <p>Since the 1960s, scientists and policymakers have repeatedly returned to this idea. NASA studies, international research programs, and private initiatives have all explored variations of the same concept: collect solar energy in space, then send it back to Earth to be used where people live.</p>
+          <p>And every time, the same problem emerges.</p>
+        </div>
       </div>
-      <div class="pitch-pillar">
-        <div class="pitch-pillar-num">02</div>
-        <div class="pitch-pillar-title">The Solution</div>
-        <div class="pitch-pillar-body">Rather than transmitting energy, we convert it into digital value in orbit. Bitcoin mining in space eliminates the transmission problem entirely — the only thing that crosses the Earth-space boundary is data.</div>
-      </div>
-      <div class="pitch-pillar">
-        <div class="pitch-pillar-num">03</div>
-        <div class="pitch-pillar-title">The Opportunity</div>
-        <div class="pitch-pillar-body">A single satellite is projected to generate $17k–$104k per year in mining revenue, with transponder bandwidth leasing adding up to $3.6M per year per satellite — <strong style="color: rgba(226,234,242,0.8); font-weight: 600;">before Bitcoin's price trajectory is factored in.</strong></div>
-      </div>
-      <div class="pitch-pillar">
-        <div class="pitch-pillar-num">04</div>
-        <div class="pitch-pillar-title">Patent Pending</div>
-        <div class="pitch-pillar-body">Our Space-Based Blockchain Mining Platform is patent pending. Licensing to megaconstellation operators — Starlink, Kuiper, OneWeb, and Guowang — represents a multi-billion dollar addressable market.</div>
+      <div class="col-visual" style="padding:0;overflow:hidden;">
+        <img src="images/OrbitalEnergySystem.png" alt="Orbital Energy System" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
       </div>
     </div>
   </div>
-      <div class="hero-actions">
-      <a href="concept.html" class="btn-primary">Explore the Technology</a>
-      <a href="about.html" class="btn-outline">About Us</a>
-    </div>
 </div>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div>
-      <div class="contact-label">Get in Touch</div>
-      <div class="contact-title">Partner With<br />Intercosmic Energy</div>
-      <p class="contact-desc">We are actively engaging with strategic partners, investors, defense stakeholders, and megaconstellation operators. If you are interested in licensing, acquisition, or collaboration, we want to hear from you.</p>
+<!-- SECTION: The Transmission Problem -->
+<div class="section-divider">
+  <div class="content-section reveal" id="breakdown">
+    <div class="section-eyebrow">The Core Challenge</div>
+    <h2 class="section-title">The Transmission Problem: Where SBSP Breaks Down</h2>
+    <div class="section-body">
+      <p>Energy generated in space is useless unless it can be delivered somewhere else. Traditionally, SBSP concepts rely on transmitting power to Earth using microwave or laser beams, where it is then converted back into electricity via rectennas or photovoltaic receivers.</p>
+      <p>This approach introduces several compounding challenges:</p>
     </div>
-    <div class="contact-items">
+    <ul class="ic-list">
+      <li><span><strong>Transmission losses:</strong> inefficiencies at every stage compound over distance.</span></li>
+      <li><span><strong>Infrastructure costs:</strong> large receiving arrays, long-term maintenance, political complexity.</span></li>
+      <li><span><strong>Safety and risk:</strong> high-power beams aimed at Earth create friction and regulation.</span></li>
+      <li><span><strong>Economic fragility:</strong> massive upfront capex before revenue, uncertain payback.</span></li>
+    </ul>
+    <div class="section-body">
+      <p>In short, transmission is the Achilles' heel that has kept SBSP perpetually out of reach.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: First Principles Reframe -->
+<div class="section-divider">
+  <div class="content-section reveal" id="reframe">
+    <div class="highlight-block">
+      <p>"What If Energy Didn’t Have to Be Transmitted?"</p>
+    </div>
+    <div class="section-eyebrow">The Insight</div>
+    <h2 class="section-title">A First-Principles Reframe</h2>
+    <div class="section-body">
+      <p>The key insight behind Bitcoin mining in space is deceptively simple: <b>energy does not need to be transmitted if value can be created where the energy exists.</b></p>
+      <p>Rather than forcing space-generated energy into terrestrial power grids, this approach allows space to operate on its own economic terms. Sunlight in orbit is converted directly into digital value—value that can move across Earth’s networks instantly, securely, and without loss.</p>
+      <p>This reframing collapses the problem from a hardware-heavy transmission challenge into a purely digital one.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: Bitcoin as Energy-Native Money -->
+<div class="section-divider">
+  <div class="content-section reveal" id="native">
+    <div class="two-col">
       <div>
-        <div class="contact-item-label">General Inquiries</div>
-        <div class="contact-item-val"><a id="email-info" href="#" class="email-link">Loading...</a></div>
+        <div class="section-eyebrow">The Mechanism</div>
+        <h2 class="section-title">Bitcoin as Energy-Native Money</h2>
+        <div class="section-body">
+          <p>Bitcoin is uniquely suited to play this role because it is, at its core, energy-backed.</p>
+          <p>Bitcoin mining converts energy into cryptographic work. That work secures a global, permissionless ledger and is rewarded with bitcoin—an asset that is liquid, globally recognized, and transferable at the speed of the internet. No other monetary system so directly ties energy expenditure to value creation.</p>
+          <p>This makes Bitcoin the purest representation of energy as currency ever created.</p>
+          <p>Crucially, Bitcoin does not care <i>where</i> the energy comes from. A kilowatt-hour spent mining bitcoin in orbit is economically indistinguishable from one spent on Earth. The network treats them equally. This property allows orbital solar energy—previously stranded and unusable—to become instantly monetizable.</p>
+        </div>
       </div>
-      <div class="contact-ctas">
-        <a id="cta-investor" href="#" class="btn-primary">I'm an Investor</a>
-        <a id="cta-partner" href="#" class="btn-primary">I'm a Licensing Partner</a>
-        <a id="cta-defense" href="#" class="btn-primary">I'm a Defense Stakeholder</a>
+      <div class="col-visual" style="padding:0;overflow:hidden; aspect-ratio: 2/3;">
+        <img src="images/BitcoinAsEnergy.png" alt="Bitcoin as Energy-Native Money" style="width:100%;height:100%;object-fit:contain; border-radius:4px;" />
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- SECTION: Digital Value Pipeline -->
+<div class="section-divider">
+  <div class="content-section reveal" id="pipeline">
+    <div class="section-eyebrow">The Architecture</div>
+    <h2 class="section-title">Establishing a Digital Value Pipeline from Space to Earth</h2>
+    <div class="section-body">
+      <p>When Bitcoin mining occurs in space, the output is not electricity — it is digital value.</p> 
+      <p>This creates a <b>100% digital, lossless value pipeline</b> from space to Earth:</p>
+    </div>
+    <ul class="ic-list">
+      <li><span>No power beaming</span></li>
+      <li><span>No atmospheric loss</span></li>
+      <li><span>No physical transmission risk</span></li>
+      <li><span>No geographic constraints</span></li>
+    </ul>
+    <div class="section-body">
+      <p>The only thing that needs to cross the Earth-space boundary is data.</p>
+      <p>Compared to traditional SBSP architectures, this is a radical simplification. The satellite becomes a self-contained economic unit: it generates energy, converts that energy into value, and transmits that value digitally to Earth.</p>
+      <p>In economic terms, this collapses an entire layer of cost and risk.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: Solving the 50-Year Riddle -->
+<div class="section-divider">
+  <div class="content-section reveal" id="riddle">
+    <div class="section-eyebrow">Economic Breakthrough</div>
+    <h2 class="section-title">Solving the 50-Year Economic Riddle of SBSP</h2>
+    <p class="section-body">This approach resolves the long-standing economic challenge of SBSP in several key ways:</p>
+    <ul class="ic-list">
+      <li><span><strong>Immediate Monetization:</strong> Revenue generation begins as soon as the system is operational. No dependency on ground-based infrastructure build-out.</span></li>
+      <li><span><strong>Perfect Transmission Efficiency:</strong> Digital value does not degrade over distance. One bitcoin mined in orbit arrives on Earth intact.</span></li>
+      <li><span><strong>Reduced Capital Risk:</strong> Eliminating power transmission infrastructure dramatically reduces upfront costs and regulatory hurdles.</span></li>
+      <li><span><strong>Modularity and Scalability:</strong> Each satellite can operate independently, enabling incremental deployment rather than all-or-nothing megaprojects.</span></li>
+    </ul>
+    <div class="section-body">
+      <p>This is why Bitcoin mining in space is not merely a clever use case — it is the missing economic layer SBSP has always needed.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: Self-Funding Infrastructure -->
+<div class="section-divider">
+  <div class="content-section reveal" id="infrastructure">
+    <div class="two-col">
+      <div>
+        <div class="section-eyebrow">The Feedback Loop</div>
+        <h2 class="section-title">Space Infrastructure That Funds Itself</h2>
+        <div class="section-body">
+          <p>Once space-based energy can be monetized directly, a new dynamic emerges: <strong>space infrastructure no longer needs to be subsidized indefinitely by Earth.</strong></p>
+          <p>Mining revenue can fund:</p>
+          <ul class="ic-list">
+            <li><span>Satellite maintenance and upgrades</span></li>
+            <li><span>Orbital expansion</span></li>
+            <li><span>Next-generation orbital platforms</span></li>
+            <li><span>Expanded space manufacturing capabilities</span></li>
+          </ul>
+          <p>This creates a positive feedback loop. More infrastructure enables more energy generation, which creates more value, which funds further expansion.</p>
+          <p>For the first time, space becomes economically self-reinforcing.</p>
+        </div>
+      </div>
+      <div class="col-visual" style="padding:0;overflow:hidden;">
+        <img src="images/SelfSustainingLoop.png" alt="Self-Sustaining Space Infrastructure" style="width:100%;height:100%;object-fit:cover;border-radius:4px;" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: Why This Matters for Humanity -->
+<div class="section-divider">
+  <div class="content-section reveal" id="humanity">
+    <div class="section-eyebrow">The Larger Vision</div>
+    <h2 class="section-title">Why This Matters for Humanity</h2>
+    <div class="section-body">
+      <p>The significance of this shift goes far beyond energy economics.</p>
+      <p>Human civilization has always expanded along energy frontiers. Fire, agriculture, fossil fuels, electricity, and nuclear power each enabled new forms of social organization and growth. Space-based energy represents the next frontier — but only if it can be economically sustained.</p>
+      <p>By solving the SBSP problem, Bitcoin mining in space opens the door to:</p>
+    </div>
+    <ul class="ic-list">
+      <li><span>Long-term orbital industry</span></li>
+      <li><span>Scalable space manufacturing</span></li>
+      <li><span>Permanent human presence beyond Earth</span></li>
+      <li><span>Reduced environmental pressure on Earth's biosphere</span></li>
+    </ul>
+    <div class="section-body">
+      <p>It allows humanity to grow without being constrained entirely by terrestrial resources.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: Beyond Bitcoin -->
+<div class="section-divider">
+  <div class="content-section reveal" id="beyond">
+    <div class="highlight-block">
+      <p>"Bitcoin mining in space is not a gimmick. It is infrastructure."</p>
+    </div>
+    <div class="section-eyebrow">The Deeper Innovation</div>
+    <h2 class="section-title">Beyond Bitcoin: A New Economic Primitive</h2>
+    <div class="section-body">
+      <p>While Bitcoin is the enabling mechanism today, the deeper innovation is the creation of a space-native economic primitive: energy-to-value conversion without physical transmission.</p>
+      <p>Bitcoin simply happens to be the first system capable of supporting this at planetary scale, with no trusted intermediaries and no geographic bias.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: New Chapter -->
+<div class="section-divider">
+  <div class="content-section reveal" id="chapter">
+    <div class="section-eyebrow">Conclusion</div>
+    <h2 class="section-title">A New Chapter for Space and Energy</h2>
+        <div class="highlight-block" style="margin-top:2rem;">
+      <p>"For the first time, space can pay for itself. And that changes everything."</p>
+    </div>
+    <div class="section-body">
+      <p>Bitcoin mining in space represents a convergence of three domains that have historically evolved separately: space systems, energy systems, and digital value systems. At their intersection lies a new economic architecture—one that finally allows SBSP to fulfill its promise.</p>
+      <p>This is not about speculation or novelty. It is about aligning physics, economics, and digital infrastructure in a way that removes a fifty-year bottleneck.</p>
+      <p>By transforming sunlight in orbit into digital value, humanity gains a new tool—one capable of funding its expansion beyond Earth while preserving the planet it came from.</p>
+    </div>
+  </div>
+</div>
+
 
 <!-- FOOTER -->
 <!-- PRESS BAR -->

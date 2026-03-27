@@ -39,7 +39,14 @@
     .nav-links { display: flex; align-items: center; gap: 2.5rem; }
     .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: rgba(226,234,242,0.65); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--teal); }
-    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--teal); color: var(--teal); padding: 0.45rem 1.2rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; }
+    .nav-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      border: 1px solid var(--teal); color: var(--teal);
+      padding: 0.45rem 1.2rem; border-radius: 2px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .nav-cta:visited { color: var(--teal); }
     .nav-links a.nav-cta:hover { background: var(--teal); color: #02080f; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--teal); }
@@ -263,6 +270,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="news.html" class="active">News</a>
+      <a href="concept.html">Core Concept</a>
       <a href="faq.html">FAQ</a>
       <a href="index.html#contact" class="nav-cta">Contact</a>
     </div>
@@ -274,6 +282,7 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="news.html">News</a>
+    <a href="concept.html">Core Concept</a>
     <a href="faq.html">FAQ</a>
     <a href="index.html#contact">Contact</a>
   </div>
