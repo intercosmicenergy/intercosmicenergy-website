@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/favicon.ico" />
+  <title>FAQ — Intercosmic Energy</title>
+  <meta name="description" content="Frequently asked questions about Intercosmic Energy's space-based Bitcoin mining platform — covering orbital power, thermal management, latency, scalability, and more." />
+  <meta property="og:title" content="FAQ — Intercosmic Energy" />
+  <meta property="og:description" content="Frequently asked questions about Intercosmic Energy's space-based Bitcoin mining platform — covering orbital power, thermal management, latency, scalability, and more." />
+  <meta property="og:image" content="https://www.intercosmicenergy.com/images/hero.png" />
+  <meta property="og:url" content="https://www.intercosmicenergy.com/faq.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ — Intercosmic Energy" />
+  <meta name="twitter:description" content="Frequently asked questions about Intercosmic Energy's space-based Bitcoin mining platform — covering orbital power, thermal management, latency, scalability, and more." />
+  <meta name="twitter:image" content="https://www.intercosmicenergy.com/images/hero.png" />
+  <style>*,::before,::after{box-sizing:border-box;margin:0;padding:0}html{line-height:1.5;-webkit-text-size-adjust:100%}body{line-height:inherit}img,svg{display:block;max-width:100%}button,input{font-family:inherit;font-size:100%}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #2dd4c8;
+      --teal-dim: #1a9e95;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background-color: #02080f;
+      color: #e2eaf2;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      border-bottom: 1px solid rgba(45,212,200,0.12);
+      background: rgba(2, 8, 15, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 68px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 44px; width: 44px; border-radius: 50%; object-fit: cover; }
+    .nav-brand { line-height: 1.2; }
+    .nav-brand-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.18em; color: #fff; }
+    .nav-brand-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.3em; color: var(--teal); text-transform: uppercase; opacity: 0.8; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; letter-spacing: 0.2em; color: rgba(226,234,242,0.65); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+    .nav-cta { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--teal); color: var(--teal); padding: 0.45rem 1.2rem; border-radius: 2px; text-decoration: none; transition: all 0.2s; font-weight: 700; }
+    .nav-links a.nav-cta:hover { background: var(--teal); color: #02080f; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--teal); transition: all 0.3s; }
+    .mobile-menu { display: none; flex-direction: column; gap: 0; background: rgba(2, 8, 15, 0.97); border-top: 1px solid rgba(45,212,200,0.12); padding: 1rem 2rem 1.5rem; }
+    .mobile-menu a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.7); text-decoration: none; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--teal); }
+    @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } .mobile-menu.open { display: flex; } }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      min-height: 52vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding-top: 68px; position: relative; overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 20%, rgba(45,212,200,0.06) 0%, transparent 60%),
+        linear-gradient(to bottom, transparent 30%, rgba(2,8,15,0.98) 100%);
+    }
+    .star-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      mask-image: radial-gradient(ellipse at 70% 30%, black 20%, transparent 70%);
+      opacity: 0.3;
+    }
+    .page-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 3.5rem;
+    }
+    .page-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .page-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--teal); }
+    .page-hero h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.05; max-width: 640px; }
+    .page-hero-sub { margin-top: 1.25rem; font-size: 1rem; line-height: 1.8; color: rgba(226,234,242,0.55); max-width: 520px; }
+
+    /* ── FAQ Section ── */
+    .faq-section { border-top: 1px solid rgba(45,212,200,0.1); }
+    .faq-inner { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
+
+    /* ── Accordion ── */
+    .faq-item {
+      border-bottom: 1px solid rgba(45,212,200,0.1);
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(45,212,200,0.1); }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 0; gap: 1.5rem; text-align: left;
+    }
+    .faq-question-text {
+      font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 600;
+      color: #fff; line-height: 1.3; transition: color 0.2s;
+    }
+    .faq-question:hover .faq-question-text { color: var(--teal); }
+    .faq-icon {
+      flex-shrink: 0; width: 22px; height: 22px;
+      border: 1px solid rgba(45,212,200,0.3); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal); transition: all 0.3s;
+    }
+    .faq-icon svg { width: 10px; height: 10px; transition: transform 0.3s; }
+    .faq-item.open .faq-icon { background: rgba(45,212,200,0.1); }
+    .faq-item.open .faq-icon svg { transform: rotate(45deg); }
+    .faq-answer {
+      overflow: hidden; max-height: 0;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 1000px; }
+    .faq-answer-inner {
+      padding-bottom: 1.75rem;
+      font-size: 0.97rem; line-height: 1.85; color: rgba(226,234,242,0.65);
+    }
+    .faq-answer-inner p + p { margin-top: 1rem; }
+    .faq-answer-inner strong { color: rgba(226,234,242,0.9); font-weight: 500; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid rgba(255,255,255,0.06); background: #010509; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.15em; color: rgba(226,234,242,0.6); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(226,234,242,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+
+    /* ── Reveal ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Intercosmic Energy" />
+      <div class="nav-brand">
+        <div class="nav-brand-name">INTERCOSMIC ENERGY</div>
+        <div class="nav-brand-sub">Bitcoin Mining in Space</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="news.html">News</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="star-grid"></div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-eyebrow">Common Questions</div>
+    <h1>Frequently Asked Questions</h1>
+    <p class="page-hero-sub">Technical, operational, and economic questions about Intercosmic Energy's space-based Bitcoin mining platform — answered.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner reveal">
+
+    <!-- Q1 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">What advantages does space offer for Bitcoin mining compared to Earth?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Space fundamentally changes the energy profile of Bitcoin mining by removing the constraints that define terrestrial power systems.</p>
+          <p>In orbit, solar arrays operate above the atmosphere, receiving the full solar constant of approximately 1,361 W/m², compared to a maximum of roughly 1,000 W/m² at Earth's surface under ideal conditions. More importantly, space eliminates weather variability, atmospheric attenuation, and the day-night cycle, enabling dramatically higher capacity factors.</p>
+          <p>In geostationary orbit, solar exposure exceeds 99% annually, with only brief eclipse periods near equinoxes. This allows near-continuous energy generation, effectively functioning as baseload power. When comparing total annual energy yield per square meter, orbital solar can produce approximately 2.5 to 6 times more energy than the best terrestrial installations.</p>
+          <p>For Bitcoin mining, where uptime and energy cost determine profitability, this shift from intermittent to near-continuous energy availability represents a structural advantage that cannot be replicated on Earth.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">How are mining systems powered in orbit?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Mining systems in orbit are powered by integrated solar generation architectures designed specifically for the space environment. High-efficiency photovoltaic arrays, often using multi-junction cells optimized for the solar spectrum in vacuum, convert orbital sunlight directly into electrical energy.</p>
+          <p>Energy generated by the arrays is regulated through onboard power management systems that distribute electricity to compute payloads, communications systems, and thermal control subsystems. In orbits where eclipses occur, energy storage systems are incorporated to maintain continuous operation.</p>
+          <p>The architecture is inherently self-contained. Unlike terrestrial mining, which depends on external grids, transmission infrastructure, and energy markets, orbital systems generate and consume power locally. This eliminates transmission losses and reduces exposure to energy price volatility.</p>
+          <p>By co-locating energy generation and computation, mining satellites operate as vertically integrated energy-to-compute platforms — maximizing efficiency and enabling direct conversion of solar energy into digital value without intermediate infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">How is heat managed in the vacuum of space?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Thermal management in space requires a fundamentally different approach than on Earth. In the absence of atmosphere, heat cannot be removed through convection or conduction — instead, all excess thermal energy must be rejected through radiation.</p>
+          <p>Mining satellites use closed-loop thermal management systems built around aerospace-grade heat pipes and fluid loops. Heat generated by the compute payload is captured and transported to external radiator panels with high emissivity coatings, which emit thermal energy as infrared radiation directly into space.</p>
+          <p>At nominal operating temperatures, radiator systems can achieve approximately 800 W/m² of heat rejection. For example, a radiator array of approximately 7.5m² can dissipate around 6 kW of heat, while a 20m² system can support roughly 15 kW of continuous thermal load.</p>
+          <p>Radiative cooling is not a limitation — it is a deterministic and scalable solution that enables sustained high-performance compute operations in orbit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">What orbital environments are optimal for mining satellites?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p><strong>Geostationary orbit (GEO)</strong> provides the highest energy consistency, with greater than 99% sunlight availability. This makes it ideal for maximizing uptime and simplifying power system design. Thermal conditions are also stable and predictable, supporting long-term operations.</p>
+          <p><strong>Low Earth orbit (LEO)</strong> offers lower launch costs and faster deployment cycles. Sun-synchronous orbit can maintain very high solar exposure by tracking the terminator line between day and night, significantly improving duty cycle while retaining logistical advantages.</p>
+          <p><strong>Highly elliptical orbits (HEO)</strong> provide unique advantages for extended exposure during apogee and improved coverage of high-latitude regions. These can be used in constellation architectures to balance exposure and coverage.</p>
+          <p>Ultimately, system architecture can leverage a mix of orbits, allowing mining infrastructure to scale dynamically while optimizing for performance, cost, and mission objectives.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">How is mined Bitcoin transmitted securely back to Earth?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>In space-based mining, only data is transmitted to Earth — not energy. This is a critical distinction that fundamentally simplifies the system architecture.</p>
+          <p>Mining satellites generate cryptographic proofs of work, which are transmitted through secure communication links to ground-based nodes using existing low Earth orbit communications networks, including constellations such as Starlink. Data is encrypted end-to-end and integrated directly into the global Bitcoin network.</p>
+          <p>Because the payload is purely digital, transmission is effectively lossless. Unlike power beaming, there is no energy degradation, no atmospheric interference, and no need for large ground-based receiving infrastructure. A successfully mined block or share retains its full value regardless of distance.</p>
+          <p>This creates a clean separation between energy generation and value transmission. The satellite converts energy into digital assets locally, and those assets move across existing global networks instantly and securely.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">What are the launch and deployment costs for mining satellites?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Launch costs have historically been the primary barrier to large-scale space infrastructure. However, this constraint is rapidly diminishing due to advances in reusable launch systems. Vehicles such as Falcon 9 have reduced the cost of access to orbit to below $5,000 per kilogram, with further reductions achieved through rideshare and high-volume deployment strategies.</p>
+          <p>The next generation of launch systems, particularly Starship, is expected to reduce costs even further — potentially below $100 per kilogram at scale. This represents an order-of-magnitude improvement compared to historical launch economics.</p>
+          <p>Unlike traditional space-based solar power systems, mining satellites do not require ground-based energy receiving infrastructure, significantly reducing total system cost. Deployment can also be incremental, generating revenue immediately upon operation rather than requiring massive upfront capital investment.</p>
+          <p>As launch costs continue to decline, the economics of space-based mining shift from speculative to practical — eventually making it cheaper to deploy compute in space than on Earth.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">How does latency impact mining performance from orbit?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Orbital systems connect to Earth through high-speed satellite networks, including constellations like Starlink and emerging platforms such as Amazon's Project Kuiper. These networks provide low-latency, high-bandwidth connectivity comparable to terrestrial infrastructure.</p>
+          <p>Modern mining protocols and pool architectures are already designed to handle distributed participants across the globe. Orbital miners function as another node in this distributed system, with no inherent disadvantage relative to remote terrestrial operations.</p>
+          <p>As satellite communication networks continue to evolve, latency will decrease further, reinforcing the viability of space-based mining as a competitive participant in global networks.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">What are the regulatory and legal considerations for space-based mining?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Space-based mining operates within established international and national legal frameworks governing space activity, including treaties such as the Outer Space Treaty, as well as national licensing regimes for satellite deployment, spectrum usage, and communications.</p>
+          <p>Operators must secure launch approvals, frequency allocations, and orbital slots where applicable. However, compared to terrestrial mining and data center development, space-based systems face fewer localized constraints. On Earth, large-scale energy and compute projects often encounter significant resistance due to land use, environmental concerns, and community opposition. In orbit, these constraints are largely absent.</p>
+          <p>Additionally, the absence of power beaming eliminates a major source of regulatory complexity and public concern, resulting in a more streamlined pathway to deployment where the primary challenges are technical and operational rather than political.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">How scalable is a constellation of mining satellites?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Space-based mining is inherently modular and scalable. Each satellite functions as an independent economic unit, capable of generating energy, performing computation, and transmitting value without reliance on centralized infrastructure.</p>
+          <p>Deployment can begin at small scales and expand incrementally to megawatt, gigawatt, and eventually terawatt-scale systems. This stepwise approach allows capacity to grow in alignment with technological advancements and market conditions.</p>
+          <p>Because each unit is self-contained, scaling does not introduce the same complexity as terrestrial infrastructure, where additional capacity often requires significant expansion of grid connections, cooling systems, and physical facilities. Constellation architectures also provide redundancy and resilience — individual satellite failures do not compromise the overall system.</p>
+          <p>The combination of modular deployment, declining launch costs, and continuous energy availability creates a pathway to exponential growth that is not constrained by terrestrial limitations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span class="faq-question-text">What are the risks and failure modes of operating mining hardware in space?</span>
+        <span class="faq-icon">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/>
+          </svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>Operating compute systems in space introduces a unique set of risks, including radiation exposure, thermal cycling, hardware degradation, and launch-related failures. These risks are well understood within the aerospace industry and are mitigated through established engineering practices.</p>
+          <p>Satellite buses and critical systems are designed using radiation-hardened components capable of withstanding prolonged exposure to charged particles and cosmic radiation. Shielding, error-correcting memory, and fault-tolerant architectures further enhance system resilience.</p>
+          <p>Redundancy is a core design principle. Critical subsystems including power, communications, and control systems are duplicated to ensure continued operation in the event of component failure. Software systems incorporate autonomous fault detection and recovery logic, allowing satellites to identify issues and maintain operations without immediate human intervention.</p>
+          <p>By distributing capacity across many satellites rather than concentrating it in a single system, the constellation maintains overall reliability even in the event of individual unit failures.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© <span id="year"></span> Intercosmic Energy. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://x.com/intercosmicNRG" aria-label="X / Twitter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/intercosmic-energy" aria-label="LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  // Accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
