@@ -295,8 +295,7 @@
           <div class="team-role">Chief Executive Officer</div>
           <div class="team-bio">Nick is the Chief Executive Officer and founder of Intercosmic Energy, bringing over a decade of expertise in the energy sector as Lead Cryogenics Refinery Operator at Linde's largest U.S. refinery. The inventor of the Space-Based Blockchain Mining Platform (patent pending), Nick identified the core economic gap in space-based solar power and engineered the architecture to close it. His work is further grounded in more than 12,000 hours studying Bitcoin economics and mining.</div>
           <div class="team-links">
-            <a href="/cdn-cgi/l/email-protection#ef81868c8480838e9cc182809d8e81af86819b8a9d8c809c82868c8a818a9d8896c18c8082" class="team-link">Email</a>
-          </div>
+            <a id="email-nick" href="#" class="team-link">Email</a>          </div>
         </div>
       </div>
 
@@ -310,7 +309,7 @@
           <div class="team-role">Chief Technology Officer</div>
           <div class="team-bio">Mike serves as Chief Technology Officer at Intercosmic Energy, bringing 17 years of experience across the defense and private sectors with deep specialization in space electronic warfare, satellite command and design, orbital mechanics, and missile warning systems. Throughout his career, he has directed and participated in all aspects of system testing — evaluating architecture, identifying issues, and reporting findings at the highest levels. His expertise forms the technical backbone of Intercosmic Energy's orbital mining platform.</div>
           <div class="team-links">
-            <a href="/cdn-cgi/l/email-protection#3855515b50595d541655415d4a4b7851564c5d4a5b574b55515b5d565d4a5f41165b5755" class="team-link">Email</a>
+            <a id="email-mike" href="#" class="team-link">Email</a>
           </div>
         </div>
       </div>
@@ -325,7 +324,7 @@
           <div class="team-role">Chief Operations Officer</div>
           <div class="team-bio">Brad serves as Chief Operating Officer at Intercosmic Energy, bringing 10 years combined experience across the defense and private sectors with specialization in satellite communications, data transmission, and software development. He has overseen the integration and technical delivery of over $520 million in contracts, coordinating seamlessly across multiple departments to ensure on-time, on-scope execution. Brad's operational and technical depth makes him a driving force behind Intercosmic Energy's mission to bring space-based infrastructure to market.</div>
           <div class="team-links">
-            <a href="/cdn-cgi/l/email-protection#355747545159504c1b5d5a5959504c755c5b415047565a46585c56505b5047524c1b565a58" class="team-link">Email</a>
+            <a id="email-brad" href="#" class="team-link">Email</a>
           </div>
         </div>
       </div>
@@ -383,10 +382,10 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>  
   document.getElementById('year').textContent = new Date().getFullYear();
   document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
   });
   
   const reveals = document.querySelectorAll('.reveal');
@@ -394,6 +393,21 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
+
+  // Build team email addresses at runtime
+  (function() {
+    const d = 'intercosmicenergy' + '.' + 'com';
+    const emails = {
+      'email-nick': 'nickolas.moran',
+      'email-mike': 'michael.myers',
+      'email-brad': 'bradley.holley',
+    };
+    Object.entries(emails).forEach(([id, user]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.href = 'mailto:' + user + '\u0040' + d;
+    });
+  })();
 </script>
 </body>
 </html>
